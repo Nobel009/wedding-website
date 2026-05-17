@@ -1,0 +1,82 @@
+.section {
+  background: var(--color-text);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.grid {
+  display: grid;
+  gap: 34px;
+  align-items: start;
+}
+
+.copy {
+  display: grid;
+  gap: 16px;
+}
+
+.copy h2 {
+  color: var(--color-white);
+  font-size: clamp(4rem, 16vw, 8rem);
+}
+
+.copy p {
+  max-width: 430px;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+  border: 1px solid rgba(184, 154, 122, 0.5);
+  padding: clamp(22px, 5vw, 34px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.form label,
+.form fieldset {
+  display: grid;
+  gap: 8px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  border: 1px solid rgba(245, 239, 230, 0.22);
+  border-radius: 0;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.form input[type='radio'] {
+  width: auto;
+  accent-color: var(--color-accent);
+}
+
+.form button {
+  width: 100%;
+  cursor: pointer;
+}
+
+.success {
+  color: #f5e6c8;
+}
+
+@media (min-width: 820px) {
+  .grid {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+}

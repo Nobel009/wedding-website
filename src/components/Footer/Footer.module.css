@@ -1,0 +1,39 @@
+.footer {
+  padding: 54px 0;
+  background: var(--color-bg-alt);
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.mark {
+  margin-bottom: 8px;
+  color: var(--color-accent-dark);
+  font-family: var(--font-script);
+  font-size: clamp(3.6rem, 12vw, 5.8rem);
+  line-height: 1;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.socials a {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(184, 154, 122, 0.52);
+  color: var(--color-accent-dark);
+}
+
+.socials svg {
+  width: 21px;
+  height: 21px;
+}
+
+.footer small {
+  font-size: 0.78rem;
+}
