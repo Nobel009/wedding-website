@@ -126,6 +126,50 @@ h3 {
   background: linear-gradient(to right, transparent, var(--color-accent), transparent);
 }
 
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-accent), var(--color-accent-dark));
+  transition: width 80ms linear;
+}
+
+.cursorTrail {
+  position: fixed;
+  z-index: 9999;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.5;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: left 0.08s ease, top 0.08s ease;
+}
+
+.sectionChapter {
+  position: fixed;
+  left: -26px;
+  top: 52%;
+  z-index: 900;
+  color: var(--color-accent-dark);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: opacity 220ms ease;
+}
+
+.sectionChapterVisible {
+  opacity: 0.8;
+}
+
 .outlineButton,
 .solidButton {
   display: inline-flex;
@@ -160,5 +204,12 @@ h3 {
   :root {
     --section-padding: 100px 0;
     --container: min(960px, calc(100% - 72px));
+  }
+}
+
+@media (max-width: 767px) {
+  .cursorTrail,
+  .sectionChapter {
+    display: none;
   }
 }

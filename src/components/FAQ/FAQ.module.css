@@ -1,7 +1,40 @@
+.search {
+  display: grid;
+  max-width: 520px;
+  gap: 6px;
+  margin: 0 auto 34px;
+}
+
+.search span {
+  color: var(--color-accent-dark);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.search input {
+  border: 0;
+  border-bottom: 1px solid rgba(184, 154, 122, 0.55);
+  padding: 12px 0;
+  background: transparent;
+  color: var(--color-text);
+  outline: 0;
+}
+
+.search input:focus {
+  border-bottom-color: var(--color-accent-dark);
+}
+
 .accordion {
   max-width: 780px;
   margin: 0 auto;
   border-top: 1px solid rgba(184, 154, 122, 0.4);
+}
+
+.empty {
+  padding: 26px 0;
+  color: var(--color-text-light);
+  text-align: center;
 }
 
 .item {

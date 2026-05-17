@@ -25,6 +25,11 @@
   font-family: var(--font-script);
   font-size: clamp(1.9rem, 5vw, 2.6rem);
   line-height: 1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.solid .logo {
+  color: var(--color-accent-dark);
 }
 
 .menuButton {

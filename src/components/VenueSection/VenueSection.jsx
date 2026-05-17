@@ -1,9 +1,26 @@
+import { useState } from 'react'
 import SectionReveal from '../SectionReveal'
 import styles from './VenueSection.module.css'
 
 function VenueCard({ label, venue }) {
+  const [tilt, setTilt] = useState('perspective(600px) rotateX(0deg) rotateY(0deg)')
+
+  const handleMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    const y = event.clientY - rect.top
+    const rotateY = ((x / rect.width) - 0.5) * 8
+    const rotateX = ((0.5 - y / rect.height) * 8)
+    setTilt(`perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`)
+  }
+
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.card}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={() => setTilt('perspective(600px) rotateX(0deg) rotateY(0deg)')}
+      style={{ transform: tilt }}
+    >
       <img src={venue.image} alt={venue.name} />
       <div className={styles.overlay}>
         <span>{label}</span>

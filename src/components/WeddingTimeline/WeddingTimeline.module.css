@@ -1,0 +1,174 @@
+.wrap {
+  position: relative;
+}
+
+.headingWrap {
+  position: relative;
+  margin-bottom: 52px;
+  text-align: center;
+}
+
+.headingWrap h2 {
+  font-size: clamp(3rem, 9vw, 5.6rem);
+  font-weight: 600;
+}
+
+.headingWrap > span {
+  position: absolute;
+  color: #d8a1ad;
+  font-size: 1.4rem;
+}
+
+.headingWrap > span:nth-child(1) {
+  left: 18%;
+  top: 18px;
+}
+
+.headingWrap > span:nth-child(2) {
+  right: 19%;
+  top: -8px;
+}
+
+.headingWrap > span:nth-child(3) {
+  right: 28%;
+  bottom: 0;
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 54px;
+}
+
+.timeline::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--color-text);
+  content: '';
+  transform: translateX(-50%);
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 64px 1fr;
+  align-items: center;
+  min-height: 128px;
+}
+
+.content {
+  display: grid;
+  gap: 4px;
+}
+
+.left .content {
+  grid-column: 1;
+  text-align: right;
+}
+
+.right .content {
+  grid-column: 3;
+}
+
+.content time {
+  color: var(--color-accent-dark);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.content h3 {
+  font-size: clamp(2.1rem, 6vw, 3rem);
+  font-style: italic;
+}
+
+.content p {
+  color: var(--color-text-light);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.connector {
+  border-top: 2px dotted rgba(44, 37, 25, 0.42);
+}
+
+.left .connector {
+  grid-column: 2;
+}
+
+.right .connector {
+  grid-column: 2;
+}
+
+.dot {
+  position: absolute;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  transform: translateX(-50%);
+}
+
+.icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1px solid rgba(184, 154, 122, 0.45);
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  font-size: 1.5rem;
+}
+
+.left .icon {
+  grid-column: 3;
+  justify-self: start;
+  margin-left: 22px;
+}
+
+.right .icon {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  margin-right: 22px;
+}
+
+@media (max-width: 767px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .item {
+    grid-template-columns: 28px 44px 1fr;
+    gap: 12px;
+  }
+
+  .left .content,
+  .right .content {
+    grid-column: 3;
+    text-align: left;
+  }
+
+  .left .connector,
+  .right .connector {
+    grid-column: 2;
+  }
+
+  .left .icon,
+  .right .icon {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    margin: 0;
+  }
+
+  .dot {
+    left: 8px;
+  }
+}

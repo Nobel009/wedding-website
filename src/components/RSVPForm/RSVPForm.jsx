@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import confetti from 'canvas-confetti'
 import SectionReveal from '../SectionReveal'
 import styles from './RSVPForm.module.css'
 
@@ -22,6 +23,11 @@ function RSVPForm({ config }) {
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log('RSVP submitted', form)
+    confetti({
+      particleCount: 120,
+      spread: 80,
+      colors: ['#b89a7a', '#f5e6c8', '#ffffff', '#8a6f52'],
+    })
     setSubmitted(true)
     setForm(initialForm)
   }

@@ -3,10 +3,14 @@
   min-height: 100vh;
   place-items: center;
   padding: 110px 20px 70px;
-  background-position: center;
+  background-position-x: center;
   background-size: cover;
   color: var(--color-white);
   text-align: center;
+}
+
+.letter {
+  display: inline-block;
 }
 
 .content {

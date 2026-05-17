@@ -4,14 +4,28 @@ import styles from './FAQ.module.css'
 
 function FAQ({ items }) {
   const [openIndex, setOpenIndex] = useState(0)
+  const [query, setQuery] = useState('')
+  const filteredItems = items.filter((item) => item.q.toLowerCase().includes(query.trim().toLowerCase()))
 
   return (
     <section id="faq" className="section sectionAlt">
       <SectionReveal className="container">
         <p className="sectionKicker">Kindly note</p>
         <h2 className="sectionHeading">Frequently Asked Questions</h2>
+        <label className={styles.search}>
+          <span>Search questions</span>
+          <input
+            type="search"
+            placeholder="Search questions..."
+            value={query}
+            onChange={(event) => {
+              setQuery(event.target.value)
+              setOpenIndex(0)
+            }}
+          />
+        </label>
         <div className={styles.accordion}>
-          {items.map((item, index) => {
+          {filteredItems.map((item, index) => {
             const isOpen = openIndex === index
             return (
               <article className={styles.item} key={item.q}>
@@ -25,6 +39,7 @@ function FAQ({ items }) {
               </article>
             )
           })}
+          {filteredItems.length === 0 && <p className={styles.empty}>No questions found</p>}
         </div>
       </SectionReveal>
     </section>

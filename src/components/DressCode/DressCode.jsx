@@ -7,6 +7,11 @@ function DressCode({ config }) {
       <SectionReveal className="container">
         <p className="sectionKicker">Attire</p>
         <h2 className="sectionHeading">The Dress Code</h2>
+        <div className={styles.guide}>
+          <p>Dress Code Guide</p>
+          <img src={config.dressCode.illustrationUrl} alt="Attire reference for wedding guests" />
+          <span>Attire reference for guests — follow the color motif</span>
+        </div>
         <div className={styles.attireGrid}>
           <article>
             <h3>Men's Attire</h3>
