@@ -6,7 +6,7 @@ export const weddingConfig = {
   date: '2026-06-15T10:00:00+08:00',
   rsvpDeadline: 'May 3, 2026',
   hashtag: '#spendtheCRISofmylifewithCHENG',
-  heroImage: 'https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=1920&auto=format&fit=crop',
+  heroImage: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1920&q=80',
   welcomeImage: 'https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=900&auto=format&fit=crop',
   story: [
     {
