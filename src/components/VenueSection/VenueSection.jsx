@@ -21,7 +21,7 @@ function VenueCard({ label, venue }) {
       onMouseLeave={() => setTilt('perspective(600px) rotateX(0deg) rotateY(0deg)')}
       style={{ transform: tilt }}
     >
-      <img src={venue.image} alt={venue.name} />
+      <img src={venue.image} alt={venue.name} style={{ objectPosition: venue.objectPosition ?? 'center' }} />
       <div className={styles.overlay}>
         <span>{label}</span>
         <h3>{venue.name}</h3>

@@ -1,12 +1,12 @@
 export const weddingConfig = {
-  bride: 'Cris',
-  groom: 'Cheng',
-  businessName: 'Cordially Invited Co.',
+  bride: 'Jane',
+  groom: 'John',
+  businessName: 'The Wedding Website',
   weddingDateLabel: 'June 15, 2026',
   date: '2026-06-15T10:00:00+08:00',
   rsvpDeadline: 'May 3, 2026',
   hashtag: '#spendtheCRISofmylifewithCHENG',
-  audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+  audioUrl: '/wedding-song.mp3',
   heroImage: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1920&q=80',
   welcomeImage: 'https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=900&auto=format&fit=crop',
   timeline: [
@@ -35,7 +35,8 @@ export const weddingConfig = {
     name: 'Hall of Justice',
     address: 'San Juan, Southern Leyte',
     mapUrl: 'https://maps.google.com',
-    image: 'https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=900&auto=format&fit=crop',
+    image: '/hall-of-justice.jpg',
+    objectPosition: 'center top',
   },
   reception: {
     name: "Edith and Eden's Resort",
@@ -52,7 +53,7 @@ export const weddingConfig = {
   ],
   giftDetails: {
     title: 'A little note on gifts',
-    accountName: 'Cheng and Cris',
+    accountName: 'John and Jane',
     gcash: '09XX XXX XXXX',
     bank: 'Your Preferred Bank',
   },
