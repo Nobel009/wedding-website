@@ -5,10 +5,10 @@ export const weddingConfig = {
   weddingDateLabel: 'June 15, 2026',
   date: '2026-06-15T10:00:00+08:00',
   rsvpDeadline: 'May 3, 2026',
-  hashtag: '#spendtheCRISofmylifewithCHENG',
+  hashtag: '#spendtheJANEofmylifewithJOHN',
   audioUrl: '/wedding-song.mp3',
   heroImage: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1920&q=80',
-  welcomeImage: 'https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=900&auto=format&fit=crop',
+  welcomeImage: '/john-and-jane.jpg',
   timeline: [
     { time: '2 PM', event: 'Ceremony', description: 'Bulwagan, San Juan, Southern Leyte', icon: '💍', side: 'left' },
     { time: '5 PM', event: 'Reception', description: "Reception at Edith and Eden's Resort, Cat-Iwing, Hinundayan", icon: '🥂', side: 'right' },
