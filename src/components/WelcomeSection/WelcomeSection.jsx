@@ -132,7 +132,10 @@ function WelcomeSection({ config }) {
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.12 }} viewport={{ once: true }} className={styles.copy}>
           <p className="sectionKicker">With joyful hearts</p>
-          <h2>Welcome to Our Wedding Website</h2>
+          <h2>
+            Welcome to
+            <span className={styles.mobileTitleBreak}> Our Wedding Website</span>
+          </h2>
           <p>
             We are so grateful to share this season with the people who have loved, guided, and celebrated us along the way.
           </p>

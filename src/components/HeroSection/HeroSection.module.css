@@ -1,12 +1,23 @@
 .hero {
   display: grid;
   min-height: 100vh;
+  min-height: 100dvh;
   place-items: center;
   padding: 110px 20px 70px;
   background-position-x: center;
   background-size: cover;
   color: var(--color-white);
+  overflow: clip;
   text-align: center;
+}
+
+.word {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.word:not(:last-child) {
+  margin-right: 0.18em;
 }
 
 .letter {
@@ -38,9 +49,11 @@
   margin: 26px 0 18px;
   color: var(--color-white);
   font-family: var(--font-script);
-  font-size: clamp(5rem, 18vw, 9.5rem);
+  font-size: clamp(4.05rem, 15vw, 9.5rem);
   font-weight: 400;
   line-height: 0.95;
+  max-width: 100%;
+  overflow-wrap: normal;
 }
 
 .date {
@@ -48,4 +61,15 @@
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 5vw, 2.7rem);
   font-weight: 300;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.8rem, 14vw, 4.6rem);
+  }
 }

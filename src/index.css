@@ -28,12 +28,14 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background: var(--color-bg);
 }
 
@@ -80,6 +82,7 @@ h3 {
 
 #root {
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .section {

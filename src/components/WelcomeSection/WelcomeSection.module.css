@@ -111,6 +111,10 @@
   font-size: clamp(2.5rem, 8vw, 4.3rem);
 }
 
+.mobileTitleBreak {
+  display: inline;
+}
+
 .copy p {
   color: var(--color-text-light);
 }
@@ -251,5 +255,33 @@
   .grid {
     grid-template-columns: 0.9fr 1.1fr;
     gap: 62px;
+  }
+}
+
+@media (max-width: 767px) {
+  .copy {
+    justify-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .copy h2 {
+    max-width: 10.5em;
+    font-size: clamp(2.85rem, 13vw, 3.75rem);
+    line-height: 0.92;
+    text-wrap: balance;
+  }
+
+  .mobileTitleBreak {
+    display: block;
+    margin-top: 0.08em;
+  }
+
+  .copy h2 + p {
+    margin-top: 6px;
+  }
+
+  .hashtag {
+    justify-self: center;
   }
 }

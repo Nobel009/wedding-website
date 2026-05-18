@@ -1,15 +1,24 @@
 .nav {
+  --nav-height: 68px;
   position: fixed;
   top: 0;
+  right: 0;
   left: 0;
-  z-index: 1000;
-  display: flex;
+  z-index: 2100;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
   width: 100%;
-  min-height: 76px;
+  width: 100dvw;
+  max-width: 100%;
+  height: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
   align-items: center;
-  justify-content: space-between;
-  padding: 16px 22px;
-  color: var(--color-white);
+  gap: 14px;
+  padding: calc(10px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px));
+  background: rgba(253, 250, 246, 0.94);
+  box-shadow: 0 10px 34px rgba(44, 37, 25, 0.08);
+  color: var(--color-text);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: background 220ms ease, box-shadow 220ms ease, color 220ms ease;
 }
 
@@ -21,11 +30,16 @@
 }
 
 .logo {
+  min-width: 0;
+  max-width: calc(100vw - 92px);
+  overflow: hidden;
   color: var(--color-accent-dark);
   font-family: var(--font-script);
-  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  font-size: clamp(1.55rem, 7vw, 2.05rem);
   line-height: 1;
+  text-overflow: ellipsis;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 .solid .logo {
@@ -36,12 +50,15 @@
   display: inline-flex;
   width: 44px;
   height: 44px;
+  flex: 0 0 44px;
+  justify-self: end;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
   border: 1px solid rgba(184, 154, 122, 0.55);
   background: rgba(255, 255, 255, 0.2);
+  color: var(--color-accent-dark);
   cursor: pointer;
 }
 
@@ -53,9 +70,13 @@
 
 .links {
   position: fixed;
-  inset: 76px 0 auto 0;
+  top: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
+  right: 0;
+  left: 0;
   display: grid;
   gap: 8px;
+  max-height: calc(100dvh - var(--nav-height) - env(safe-area-inset-top, 0px));
+  overflow-y: auto;
   padding: 22px;
   background: rgba(253, 250, 246, 0.98);
   color: var(--color-text);
@@ -79,9 +100,32 @@
   text-transform: uppercase;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .nav {
+    --nav-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    box-shadow: none;
+    color: var(--color-white);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     padding: 20px 44px;
+  }
+
+  .solid {
+    background: rgba(253, 250, 246, 0.94);
+    box-shadow: 0 16px 40px rgba(44, 37, 25, 0.08);
+    color: var(--color-text);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .logo {
+    max-width: none;
+    flex: 0 1 auto;
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
   }
 
   .menuButton {

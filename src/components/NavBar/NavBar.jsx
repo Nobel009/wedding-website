@@ -11,14 +11,69 @@ const links = [
 ]
 
 function NavBar({ config }) {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(() => (
+    typeof window === 'undefined' ? false : window.scrollY > 8
+  ))
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    onScroll()
+    const updateScrolled = () => {
+      setScrolled(window.scrollY > 8)
+    }
+
+    const closeDesktopMenu = () => {
+      if (window.innerWidth >= 1024) {
+        setOpen(false)
+      }
+      updateScrolled()
+    }
+
+    updateScrolled()
+    window.addEventListener('scroll', updateScrolled, { passive: true })
+    window.addEventListener('resize', closeDesktopMenu)
+    window.addEventListener('pageshow', updateScrolled)
+    return () => {
+      window.removeEventListener('scroll', updateScrolled)
+      window.removeEventListener('resize', closeDesktopMenu)
+      window.removeEventListener('pageshow', updateScrolled)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!open) return undefined
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [open])
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (open) setOpen(false)
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [open])
+
+  useEffect(() => {
+    const onHashChange = () => setOpen(false)
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
+
+  useEffect(() => {
+    const onVisibilityChange = () => {
+      if (!document.hidden) {
+        setScrolled(window.scrollY > 8)
+      }
+    }
+
+    document.addEventListener('visibilitychange', onVisibilityChange)
+    return () => document.removeEventListener('visibilitychange', onVisibilityChange)
   }, [])
 
   useEffect(() => {

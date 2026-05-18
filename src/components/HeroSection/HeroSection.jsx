@@ -5,6 +5,7 @@ import styles from './HeroSection.module.css'
 function HeroSection({ config }) {
   const [backgroundY, setBackgroundY] = useState(0)
   const coupleName = `${config.groom} & ${config.bride}`
+  const nameWords = coupleName.split(' ')
 
   useEffect(() => {
     const updateParallax = () => setBackgroundY(window.scrollY * 0.4)
@@ -33,17 +34,27 @@ function HeroSection({ config }) {
           animate="visible"
           aria-label={coupleName}
         >
-          {coupleName.split('').map((character, index) => (
+          {nameWords.map((word, wordIndex) => (
             <motion.span
               aria-hidden="true"
-              className={styles.letter}
-              key={`${character}-${index}`}
+              className={styles.word}
+              key={`${word}-${wordIndex}`}
               variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+                visible: { transition: { staggerChildren: 0.04 } },
               }}
             >
-              {character === ' ' ? '\u00A0' : character}
+              {word.split('').map((character, index) => (
+                <motion.span
+                  className={styles.letter}
+                  key={`${character}-${wordIndex}-${index}`}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+                  }}
+                >
+                  {character}
+                </motion.span>
+              ))}
             </motion.span>
           ))}
         </motion.h1>
