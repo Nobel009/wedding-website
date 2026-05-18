@@ -1,5 +1,5 @@
 .nav {
-  --nav-height: 68px;
+  --nav-height: 78px;
   position: fixed;
   top: 0;
   right: 0;
@@ -13,7 +13,7 @@
   height: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
   align-items: center;
   gap: 14px;
-  padding: calc(10px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px));
+  padding: calc(12px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px));
   background: rgba(253, 250, 246, 0.94);
   box-shadow: 0 10px 34px rgba(44, 37, 25, 0.08);
   color: var(--color-text);
@@ -30,13 +30,14 @@
 }
 
 .logo {
+  display: block;
   min-width: 0;
   max-width: calc(100vw - 92px);
   overflow: hidden;
   color: var(--color-accent-dark);
   font-family: var(--font-script);
   font-size: clamp(1.55rem, 7vw, 2.05rem);
-  line-height: 1;
+  line-height: 1.35;
   text-overflow: ellipsis;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
@@ -126,6 +127,7 @@
     max-width: none;
     flex: 0 1 auto;
     font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1;
   }
 
   .menuButton {
